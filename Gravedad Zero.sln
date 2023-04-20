@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gravedad Zero", "Gravedad Zero\Gravedad Zero.csproj", "{5BE2DA2D-41FA-4596-AEF3-9A0D236A3AEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BE2DA2D-41FA-4596-AEF3-9A0D236A3AEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BE2DA2D-41FA-4596-AEF3-9A0D236A3AEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BE2DA2D-41FA-4596-AEF3-9A0D236A3AEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BE2DA2D-41FA-4596-AEF3-9A0D236A3AEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3090E84B-5A39-4BE1-97F7-635E831B2AAE}
+	EndGlobalSection
+EndGlobal
