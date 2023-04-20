@@ -191,7 +191,8 @@
         </ControlTemplate>
 
         <Style
-            TargetType="Border">
+            TargetType="Border"
+            x:Key="BorderLogin">
             <Setter
                 Property="Width"
                 Value="500"></Setter>
@@ -350,7 +351,8 @@
 
     </Window.Resources>
 
-    <Border>
+    <Border
+        Style="{StaticResource BorderLogin}">
         <StackPanel>
             <DockPanel
                 Margin="5,15,15,15">
