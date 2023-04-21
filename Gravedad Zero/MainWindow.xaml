@@ -7,8 +7,8 @@
     xmlns:local="clr-namespace:Gravedad_Zero"
     mc:Ignorable="d"
     Title="Gravedad Zero"
-    Width="1100"
-    Height="600"
+    Width="650"
+    Height="450"
     Background="#FFFFFFCF">
 
     <Window.Resources>
@@ -375,8 +375,10 @@
                     Style="{DynamicResource PasswordBox}"></PasswordBox>
             </DockPanel >
             <Button
+                Command="{Binding Path=Gestion}"
                 Template="{DynamicResource ButtonControlTemplate}">
                 <TextBlock
+                    x:Name="Entrar"
                     Style="{StaticResource Boton}"
                     Text="Entrar">
                 </TextBlock>
