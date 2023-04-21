@@ -10,17 +10,19 @@ namespace Gravedad_Zero.view_model
         Navegation servicio;
 
         public RelayCommand Gestion { get; }
+        MainWindow mw;
 
-        public MainWindowVM()
+        public MainWindowVM(MainWindow mainWindow)
         {
             servicio = new Navegation();
             Gestion = new RelayCommand(CargarVentenaGestion);
-            
+            mw = mainWindow;
         }
 
         private void CargarVentenaGestion()
         {
             servicio.CargarVentanaGestion();
+            mw.Close();
         }
     }
 }

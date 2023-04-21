@@ -213,11 +213,16 @@
     <Compile Include="views\Gestion.xaml.cs">
       <DependentUpon>Gestion.xaml</DependentUpon>
     </Compile>
-    <Compile Include="views\Tabla.xaml.cs">
-      <DependentUpon>Tabla.xaml</DependentUpon>
+    <Compile Include="views\GestionBonosUsuarios.xaml.cs">
+      <DependentUpon>GestionBonosUsuarios.xaml</DependentUpon>
     </Compile>
+    <Compile Include="views\GestionNoticia.xaml.cs">
+      <DependentUpon>GestionNoticia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view_model\GestionBonosUsuariosVM.cs" />
     <Compile Include="view_model\GestionVM.cs" />
     <Compile Include="view_model\MainWindowVM.cs" />
+    <Compile Include="view_model\GestionNoticiaVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -234,7 +239,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="views\Tabla.xaml">
+    <Page Include="views\GestionBonosUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\GestionNoticia.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

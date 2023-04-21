@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gravedad_Zero.view_model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,13 +17,16 @@ using System.Windows.Shapes;
 namespace Gravedad_Zero.views
 {
     /// <summary>
-    /// Lógica de interacción para Tabla.xaml
+    /// Lógica de interacción para GestionBonosUsuarios.xaml
     /// </summary>
-    public partial class Tabla : Page
+    public partial class GestionBonosUsuarios : UserControl
     {
-        public Tabla()
+        private GestionBonosUsuariosVM vmGestionBonos;
+        public GestionBonosUsuarios()
         {
             InitializeComponent();
+            vmGestionBonos = new GestionBonosUsuariosVM();
+            this.DataContext = vmGestionBonos;
         }
     }
 }

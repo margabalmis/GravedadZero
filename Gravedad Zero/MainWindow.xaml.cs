@@ -14,7 +14,7 @@ namespace Gravedad_Zero
         public MainWindow()
         {
             InitializeComponent();
-            vm = new MainWindowVM();
+            vm = new MainWindowVM(this);
             this.DataContext = vm;
         }
     }
