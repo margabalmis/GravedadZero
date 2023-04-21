@@ -9,7 +9,7 @@
     Title="Gravedad Zero"
     Width="650"
     Height="450"
-    Background="#FFFFFFCF">
+    Background="#FFFFE7">
 
     <Window.Resources>
 
@@ -18,9 +18,9 @@
             TargetType="{x:Type TextBox}">
             <Border
                 x:Name="border"
-                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderBrush="#FFFF8000"
                 BorderThickness="{TemplateBinding BorderThickness}"
-                Background="{TemplateBinding Background}"
+                Background="#FFFFE7"
                 SnapsToDevicePixels="True"
                 CornerRadius="3"
                 Padding="4"
@@ -80,7 +80,7 @@
             x:Key="Boton">
             <Setter
                 Property="Foreground"
-                Value="#FFFFFFCF"></Setter>
+                Value="#FFFFE7"></Setter>
             <Setter
                 Property="FontWeight"
                 Value="Bold"></Setter>
@@ -157,7 +157,7 @@
                     <Setter
                         Property="Background"
                         TargetName="border"
-                        Value="LightYellow" />
+                        Value="#FFBF7F" />
                     <Setter
                         Property="BorderBrush"
                         TargetName="border"
@@ -257,10 +257,10 @@
                 Value="●" />
             <Setter
                 Property="Background"
-                Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+                Value="#FFFFE7" />
             <Setter
                 Property="BorderBrush"
-                Value="{StaticResource TextBox.Static.Border}" />
+                Value="#FFFF8000" />
             <Setter
                 Property="Foreground"
                 Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
@@ -362,6 +362,7 @@
                     FontWeight="Bold">Email</Label>
                 <TextBox
                     Template="{DynamicResource TextBoxControlTemplate}"
+                    Width="350"
                     Tag="Email"></TextBox>
             </DockPanel>
             <DockPanel
@@ -371,6 +372,7 @@
                     DockPanel.Dock="Left"
                     FontWeight="Bold">Contraseña</Label>
                 <PasswordBox
+                    Width="350"
                     Tag="Password"
                     Style="{DynamicResource PasswordBox}"></PasswordBox>
             </DockPanel >
