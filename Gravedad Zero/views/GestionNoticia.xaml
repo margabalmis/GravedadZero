@@ -136,15 +136,22 @@
                 Value="16"></Setter>
         </Style>
 
+        
         <Style
             TargetType="TextBox"
             x:Key="TextBoxTextos">
             <Setter
-                Property="IsReadOnly"
-                Value="true"></Setter>
+                Property="Foreground"
+                Value="#FFA39494"></Setter>
+            <Setter
+                Property="Background"
+                Value="{x:Null}"></Setter>
             <Setter
                 Property="HorizontalAlignment"
-                Value="Left"></Setter>
+                Value="Right"></Setter>
+            <Setter
+                Property="IsReadOnly"
+                Value="true"></Setter>
             <Setter
                 Property="FontFamily"
                 Value="Miriam Libre"></Setter>
@@ -226,6 +233,7 @@
                 FontWeight="Bold">Título</Label>
             <TextBox
                 x:Name="tituloTextBox"
+                MaxLength="30"
                 Template="{DynamicResource TextBoxControlTemplate}"
                 Width="450"
                 TextChanged="tituloTextBox_TextChanged"
@@ -234,20 +242,9 @@
         <TextBox
             Style="{StaticResource TextBoxTextos}"
             x:Name="numeroCaracteresTituloTextBox"
-            Text="0/25"
-            Margin="0,0,60,0"
-            HorizontalAlignment="Right"
-            Height="20"
-            VerticalAlignment="Top"
-            Width="80"
-            Background="{x:Null}"
-            TextAlignment="Center"
-            Foreground="#FFA39494">
-            <TextBox.BorderBrush>
-                <SolidColorBrush
-                    Color="#FFABADB3"
-                    Opacity="0" />
-            </TextBox.BorderBrush>
+            TextChanged="tituloTextBox_TextChanged"
+            Text="0/30"
+            Margin="0,0,85,0">
         </TextBox>
         <DockPanel
             Margin="5,15,15,6">
@@ -259,6 +256,7 @@
                 x:Name="textoTextBox"
                 Width="550"
                 Height="170"
+                MaxLength="280"
                 TextChanged="textoTextBox_TextChanged"
                 Template="{DynamicResource TextBoxControlTemplate}"
                 TextWrapping="Wrap"
@@ -266,16 +264,9 @@
         </DockPanel >
         <TextBox
             x:Name="numeroCaracteresTextoTextBox"
-            Text="0/140"
-            IsReadOnly="True"
-            HorizontalAlignment="Right"
-            Height="20"
-            VerticalAlignment="Top"
-            Width="100"
-            Background="{x:Null}"
-            FontSize="12"
-            TextAlignment="Center"
-            Foreground="#FFA39494"
+            Style="{StaticResource TextBoxTextos}"
+            Margin="0,0,30,0"
+            Text="0/280"
             >
             <TextBox.BorderBrush>
                 <SolidColorBrush

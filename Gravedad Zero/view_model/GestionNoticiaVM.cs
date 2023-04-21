@@ -1,6 +1,4 @@
-﻿using System.Windows.Controls;
-
-namespace Gravedad_Zero.view_model
+﻿namespace Gravedad_Zero.view_model
 {
     class GestionNoticiaVM
     {
