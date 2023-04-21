@@ -18,6 +18,7 @@ namespace Gravedad_Zero.views
             vmGestion = new GestionVM();
             this.DataContext = vmGestion;
         }
+
     }
 }
 

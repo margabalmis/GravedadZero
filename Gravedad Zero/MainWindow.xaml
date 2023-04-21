@@ -92,6 +92,23 @@
                 Value="20"></Setter>
         </Style>
 
+        <Style
+            TargetType="TextBlock"
+            x:Key="Error">
+            <Setter
+                Property="Foreground"
+                Value="#FF6300"></Setter>
+            <Setter
+                Property="HorizontalAlignment"
+                Value="Center"></Setter>
+            <Setter
+                Property="FontFamily"
+                Value="Miriam Libre"></Setter>
+            <Setter
+                Property="FontSize"
+                Value="8"></Setter>
+        </Style>
+
 
         <Style
             TargetType="Button">
@@ -376,6 +393,12 @@
                     Tag="Password"
                     Style="{DynamicResource PasswordBox}"></PasswordBox>
             </DockPanel >
+            <TextBlock
+                x:Name="ErrorText"
+                Style="{StaticResource Error}"
+                Visibility="Hidden"
+                Text="El email o la contraseña no son válidos.">
+            </TextBlock>
             <Button
                 Command="{Binding Path=Gestion}"
                 Template="{DynamicResource ButtonControlTemplate}">

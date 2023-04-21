@@ -8,15 +8,90 @@
     mc:Ignorable="d"
     xmlns:views="clr-namespace:Gravedad_Zero.views"
     Title="Gestion"
-    Height="450"
-    Width="800">
+    Height="600"
+    Width="900">
+
     <Window.Resources>
+
+        <Style
+            TargetType="{x:Type TabItem}">
+            <Setter
+                Property="Template">
+                <Setter.Value>
+                    <ControlTemplate
+                        TargetType="{x:Type TabItem}">
+                        <Border
+                            Name="Border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="#FFFF8000"
+                            BorderThickness="1,1,1,0"
+                            CornerRadius="2,2,0,0">
+                            <ContentPresenter
+                                x:Name="ContentSite"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                ContentSource="Header"
+                                Margin="14,4" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger
+                                Property="IsSelected"
+                                Value="True">
+                                <Setter
+                                    Property="FontSize"
+                                    Value="18"></Setter>
+                                <Setter
+                                    Property="FontWeight"
+                                    Value="Bold"></Setter>
+                                <Setter
+                                    Property="FontFamily"
+                                    Value="Miriam Libre"></Setter>
+                                <Setter
+                                    TargetName="Border"
+                                    Property="Background"
+                                    Value="#FFFFFFCF" />
+                                <Setter
+                                    Property="Foreground"
+                                    Value="#FFFF8000" />
+                            </Trigger>
+                            <Trigger
+                                Property="IsSelected"
+                                Value="False">
+                                <Setter
+                                    Property="FontSize"
+                                    Value="16"></Setter>
+                                <Setter
+                                    Property="FontFamily"
+                                    Value="Miriam Libre"></Setter>
+                                <Setter
+                                    Property="Foreground"
+                                    Value="#FFFF8000" />
+                                <Setter
+                                    TargetName="Border"
+                                    Property="Background"
+                                    Value="#FFFFE7" />
+                            </Trigger>
+                            <Trigger
+                                Property="IsMouseOver"
+                                Value="True">
+                                <Setter
+                                    TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="#FFFF8000" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
         <SolidColorBrush
             x:Key="TabItem.Selected.Background"
-            Color="#FFFFFF" />
+            Color="#FFFFE7" />
         <SolidColorBrush
             x:Key="TabItem.Selected.Border"
-            Color="#ACACAC" />
+            Color="#FFFF8000" />
         <Style
             x:Key="TabControlStyle1"
             TargetType="{x:Type TabControl}">
@@ -44,6 +119,7 @@
             <Setter
                 Property="Template">
                 <Setter.Value>
+                    
                     <ControlTemplate
                         TargetType="{x:Type TabControl}">
                         <Grid
@@ -68,7 +144,7 @@
                             </Grid.RowDefinitions>
                             <TabPanel
                                 x:Name="headerPanel"
-                                Background="Transparent"
+                                Background="#FFFFE7"
                                 Grid.Column="0"
                                 IsItemsHost="true"
                                 Margin="2,2,2,0"
@@ -83,6 +159,7 @@
                                 Grid.Column="0"
                                 KeyboardNavigation.DirectionalNavigation="Contained"
                                 Grid.Row="1"
+                                CornerRadius="2,2,2,2"
                                 KeyboardNavigation.TabIndex="2"
                                 KeyboardNavigation.TabNavigation="Local">
                                 <ContentPresenter
@@ -115,7 +192,7 @@
                                 <Setter
                                     Property="Margin"
                                     TargetName="headerPanel"
-                                    Value="2,0,2,2" />
+                                    Value="5,0,2,2" />
                             </Trigger>
                             <Trigger
                                 Property="TabStripPlacement"
@@ -210,33 +287,26 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
+        
+        
     </Window.Resources>
 
     <Grid>
         <TabControl
             Style="{DynamicResource TabControlStyle1}">
             <TabItem>
-                <TabItem.Header>
-                    <StackPanel>
-                        <TextBlock
-                            Text="Bonos Usuarios" />
-                    </StackPanel>
-                </TabItem.Header>
+                <TabItem.Header>Noticias</TabItem.Header>
                 <!--Contenido Vista Usuarios-->
-                <views:GestionBonosUsuarios>
-                </views:GestionBonosUsuarios>
+                <views:GestionNoticia>
+                </views:GestionNoticia>
             </TabItem>
 
             <TabItem>
-                <TabItem.Header>
-                    <StackPanel>
-                        <TextBlock
-                            Text="Noticias" />
-                    </StackPanel>
-                </TabItem.Header>
+                <TabItem.Header>Gestión de Bonos</TabItem.Header>
                 <!--Contenido Vista Noticias-->
-                <views:GestionNoticia>
-                </views:GestionNoticia>
+                <views:GestionBonosUsuarios>
+                </views:GestionBonosUsuarios>
             </TabItem>
         </TabControl>
     </Grid>

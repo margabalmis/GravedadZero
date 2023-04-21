@@ -5,8 +5,293 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Gravedad_Zero.views"
              mc:Ignorable="d" 
+             Background="#FFFFFFCF"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    <UserControl.Resources>
+
+        <ControlTemplate
+            x:Key="ButtonControlTemplate"
+            TargetType="{x:Type Button}">
+            <Border
+                x:Name="border"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                Background="{TemplateBinding Background}"
+                SnapsToDevicePixels="True"
+                CornerRadius="3">
+                <ContentPresenter
+                    x:Name="contentPresenter"
+                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                    Content="{TemplateBinding Content}"
+                    ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                    Focusable="False"
+                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    Margin="{TemplateBinding Padding}"
+                    RecognizesAccessKey="True"
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger
+                    Property="IsDefaulted"
+                    Value="True">
+                    <Setter
+                        Property="BorderBrush"
+                        TargetName="border"
+                        Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                </Trigger>
+                <Trigger
+                    Property="IsMouseOver"
+                    Value="True">
+                    <Setter
+                        Property="Background"
+                        TargetName="border"
+                        Value="#FFBF7F" />
+                    <Setter
+                        Property="BorderBrush"
+                        TargetName="border"
+                        Value="#FF3C7FB1" />
+                </Trigger>
+                <Trigger
+                    Property="IsPressed"
+                    Value="True">
+                    <Setter
+                        Property="Background"
+                        TargetName="border"
+                        Value="#FFC4E5F6" />
+                    <Setter
+                        Property="BorderBrush"
+                        TargetName="border"
+                        Value="#FF2C628B" />
+                </Trigger>
+                <Trigger
+                    Property="ToggleButton.IsChecked"
+                    Value="True">
+                    <Setter
+                        Property="Background"
+                        TargetName="border"
+                        Value="#FFBCDDEE" />
+                    <Setter
+                        Property="BorderBrush"
+                        TargetName="border"
+                        Value="#FF245A83" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <Style
+            TargetType="Button">
+            <Setter
+                Property="Width"
+                Value="100"></Setter>
+            <Setter
+                Property="Height"
+                Value="40"></Setter>
+            <Setter
+                Property="Margin"
+                Value="40"></Setter>
+            <Setter
+                Property="Background"
+                Value="#FFFF8000"></Setter>
+
+            <Setter
+                Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect
+                        Opacity="0.5">
+                    </DropShadowEffect>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style
+            TargetType="TextBlock"
+            x:Key="Boton">
+            <Setter
+                Property="Foreground"
+                Value="#FFFFE7"></Setter>
+            <Setter
+                Property="FontWeight"
+                Value="Bold"></Setter>
+            <Setter
+                Property="FontFamily"
+                Value="Miriam Libre"></Setter>
+            <Setter
+                Property="FontSize"
+                Value="20"></Setter>
+        </Style>
+
+        <Style
+            TargetType="Label">
+            <Setter
+                Property="Foreground"
+                Value="#FFFF8000"></Setter>
+            <Setter
+                Property="FontWeight"
+                Value="Bold"></Setter>
+            <Setter
+                Property="FontFamily"
+                Value="Miriam Libre"></Setter>
+            <Setter
+                Property="FontSize"
+                Value="16"></Setter>
+        </Style>
+
+        <Style
+            TargetType="TextBox"
+            x:Key="TextBoxTextos">
+            <Setter
+                Property="IsReadOnly"
+                Value="true"></Setter>
+            <Setter
+                Property="HorizontalAlignment"
+                Value="Left"></Setter>
+            <Setter
+                Property="FontFamily"
+                Value="Miriam Libre"></Setter>
+            <Setter
+                Property="TextWrapping"
+                Value="Wrap"></Setter>
+        </Style>
+
+        <ControlTemplate
+            x:Key="TextBoxControlTemplate"
+            TargetType="{x:Type TextBox}">
+            <Border
+                x:Name="border"
+                BorderBrush="#FFFF8000"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                Background="#FFFFE7"
+                SnapsToDevicePixels="True"
+                CornerRadius="3"
+                Padding="4"
+                ClipToBounds="True">
+
+                <ScrollViewer
+                    x:Name="PART_ContentHost"
+                    Focusable="False"
+                    HorizontalScrollBarVisibility="Hidden"
+                    VerticalScrollBarVisibility="Hidden" />
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger
+                    Property="IsFocused"
+                    Value="True">
+                    <Setter
+                        Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect
+                                BlurRadius="10"
+                                ShadowDepth="0"
+                                Color="DeepSkyBlue">
+                            </DropShadowEffect>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <Trigger
+                    Property="IsEnabled"
+                    Value="False">
+                    <Setter
+                        Property="Opacity"
+                        TargetName="border"
+                        Value="0.56" />
+                </Trigger>
+                <Trigger
+                    Property="IsMouseOver"
+                    Value="True">
+                    <Setter
+                        Property="BorderBrush"
+                        TargetName="border"
+                        Value="#FF7EB4EA" />
+                </Trigger>
+
+                <Trigger
+                    Property="IsKeyboardFocused"
+                    Value="True">
+                    <Setter
+                        Property="BorderBrush"
+                        TargetName="border"
+                        Value="#FF569DE5" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        </UserControl.Resources>
+
+
+    <StackPanel Margin="30">
+        <DockPanel
+            Margin="5,15,15,4">
+            <Label
+                Width="100"
+                DockPanel.Dock="Left"
+                FontWeight="Bold">Título</Label>
+            <TextBox
+                x:Name="tituloTextBox"
+                Template="{DynamicResource TextBoxControlTemplate}"
+                Width="450"
+                TextChanged="tituloTextBox_TextChanged"
+                Tag="Email"></TextBox>
+        </DockPanel>
+        <TextBox
+            Style="{StaticResource TextBoxTextos}"
+            x:Name="numeroCaracteresTituloTextBox"
+            Text="0/25"
+            Margin="0,0,60,0"
+            HorizontalAlignment="Right"
+            Height="20"
+            VerticalAlignment="Top"
+            Width="80"
+            Background="{x:Null}"
+            TextAlignment="Center"
+            Foreground="#FFA39494">
+            <TextBox.BorderBrush>
+                <SolidColorBrush
+                    Color="#FFABADB3"
+                    Opacity="0" />
+            </TextBox.BorderBrush>
+        </TextBox>
+        <DockPanel
+            Margin="5,15,15,6">
+            <Label
+                Width="100"
+                DockPanel.Dock="Left"
+                FontWeight="Bold">Texto</Label>
+            <TextBox
+                x:Name="textoTextBox"
+                Width="550"
+                Height="170"
+                TextChanged="textoTextBox_TextChanged"
+                Template="{DynamicResource TextBoxControlTemplate}"
+                TextWrapping="Wrap"
+                ></TextBox>
+        </DockPanel >
+        <TextBox
+            x:Name="numeroCaracteresTextoTextBox"
+            Text="0/140"
+            IsReadOnly="True"
+            HorizontalAlignment="Right"
+            Height="20"
+            VerticalAlignment="Top"
+            Width="100"
+            Background="{x:Null}"
+            FontSize="12"
+            TextAlignment="Center"
+            Foreground="#FFA39494"
+            >
+            <TextBox.BorderBrush>
+                <SolidColorBrush
+                    Color="#FFABADB3"
+                    Opacity="0" />
+            </TextBox.BorderBrush>
+        </TextBox>
+
+        <Button
+            Command="{Binding Path=Gestion}"
+            Template="{DynamicResource ButtonControlTemplate}">
+            <TextBlock
+                x:Name="Subir"
+                Style="{StaticResource Boton}"
+                Text="Subir">
+            </TextBlock>
+        </Button>
+    </StackPanel>
 </UserControl>
