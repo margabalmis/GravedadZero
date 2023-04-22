@@ -28,5 +28,10 @@ namespace Gravedad_Zero.views
             vmGestionBonos = new GestionBonosUsuariosVM();
             this.DataContext = vmGestionBonos;
         }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Gravedad_Zero.views"
              mc:Ignorable="d" 
              Background="#FFFFFFCF"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="550" d:DesignWidth="1000">
     <UserControl.Resources>
 
         <ControlTemplate
@@ -103,6 +103,9 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
+        
+        
         <Style
             TargetType="TextBlock"
             x:Key="Boton">
@@ -156,6 +159,9 @@
                 Property="FontFamily"
                 Value="Miriam Libre"></Setter>
             <Setter
+                Property="FontSize"
+                Value="10"></Setter>
+            <Setter
                 Property="TextWrapping"
                 Value="Wrap"></Setter>
         </Style>
@@ -172,7 +178,6 @@
                 CornerRadius="3"
                 Padding="4"
                 ClipToBounds="True">
-
                 <ScrollViewer
                     x:Name="PART_ContentHost"
                     Focusable="False"
@@ -221,68 +226,104 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
-        </UserControl.Resources>
 
+        <Style
+            TargetType="Border"
+            x:Key="BorderLogin">
+            <Setter
+                Property="Width"
+                Value="750"></Setter>
+            <Setter
+                Property="Height"
+                Value="420"></Setter>
+            <Setter
+                Property="Background"
+                Value="#FFFFFFCF"></Setter>
+            <Setter
+                Property="BorderBrush"
+                Value="#FFFF8000"></Setter>
+            <Setter
+                Property="BorderThickness"
+                Value="2"></Setter>
+            <Setter
+                Property="Margin"
+                Value="10"></Setter>
+            <Setter
+                Property="CornerRadius"
+                Value="10"></Setter>
+            <Setter
+                Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect
+                        Opacity="0.5">
+                    </DropShadowEffect>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-    <StackPanel Margin="30">
-        <DockPanel
-            Margin="5,15,15,4">
-            <Label
-                Width="100"
-                DockPanel.Dock="Left"
-                FontWeight="Bold">Título</Label>
+    </UserControl.Resources>
+
+    <Border
+        Style="{StaticResource BorderLogin}">
+        <StackPanel
+            Margin="20">
+            <DockPanel
+                Margin="5,15,15,4">
+                <Label
+                    Width="100"
+                    DockPanel.Dock="Left"
+                    FontWeight="Bold">Título</Label>
+                <TextBox
+                    x:Name="tituloTextBox"
+                    MaxLength="30"
+                    Template="{DynamicResource TextBoxControlTemplate}"
+                    Width="450"
+                    TextChanged="tituloTextBox_TextChanged"
+                    Tag="Email"></TextBox>
+            </DockPanel>
             <TextBox
-                x:Name="tituloTextBox"
-                MaxLength="30"
-                Template="{DynamicResource TextBoxControlTemplate}"
-                Width="450"
+                Style="{StaticResource TextBoxTextos}"
+                x:Name="numeroCaracteresTituloTextBox"
                 TextChanged="tituloTextBox_TextChanged"
-                Tag="Email"></TextBox>
-        </DockPanel>
-        <TextBox
-            Style="{StaticResource TextBoxTextos}"
-            x:Name="numeroCaracteresTituloTextBox"
-            TextChanged="tituloTextBox_TextChanged"
-            Text="0/30"
-            Margin="0,0,85,0">
-        </TextBox>
-        <DockPanel
-            Margin="5,15,15,6">
-            <Label
-                Width="100"
-                DockPanel.Dock="Left"
-                FontWeight="Bold">Texto</Label>
+                Text="0/30"
+                Margin="0,0,85,0">
+            </TextBox>
+            <DockPanel
+                Margin="5,15,15,6">
+                <Label
+                    Width="100"
+                    DockPanel.Dock="Left"
+                    FontWeight="Bold">Texto</Label>
+                <TextBox
+                    x:Name="textoTextBox"
+                    Width="550"
+                    Height="170"
+                    MaxLength="280"
+                    TextChanged="textoTextBox_TextChanged"
+                    Template="{DynamicResource TextBoxControlTemplate}"
+                    TextWrapping="Wrap"></TextBox>
+            </DockPanel >
             <TextBox
-                x:Name="textoTextBox"
-                Width="550"
-                Height="170"
-                MaxLength="280"
-                TextChanged="textoTextBox_TextChanged"
-                Template="{DynamicResource TextBoxControlTemplate}"
-                TextWrapping="Wrap"
-                ></TextBox>
-        </DockPanel >
-        <TextBox
-            x:Name="numeroCaracteresTextoTextBox"
-            Style="{StaticResource TextBoxTextos}"
-            Margin="0,0,30,0"
-            Text="0/280"
-            >
-            <TextBox.BorderBrush>
-                <SolidColorBrush
-                    Color="#FFABADB3"
-                    Opacity="0" />
-            </TextBox.BorderBrush>
-        </TextBox>
+                x:Name="numeroCaracteresTextoTextBox"
+                Style="{StaticResource TextBoxTextos}"
+                Margin="0,0,30,0"
+                Text="0/280">
+                <TextBox.BorderBrush>
+                    <SolidColorBrush
+                        Color="#FFABADB3"
+                        Opacity="0" />
+                </TextBox.BorderBrush>
+            </TextBox>
 
-        <Button
-            Command="{Binding Path=Gestion}"
-            Template="{DynamicResource ButtonControlTemplate}">
-            <TextBlock
-                x:Name="Subir"
-                Style="{StaticResource Boton}"
-                Text="Subir">
-            </TextBlock>
-        </Button>
-    </StackPanel>
+            <Button
+                Command="{Binding Path=Gestion}"
+                Template="{DynamicResource ButtonControlTemplate}">
+                <TextBlock
+                    x:Name="Subir"
+                    Style="{StaticResource Boton}"
+                    Text="Subir">
+                </TextBlock>
+            </Button>
+        </StackPanel>
+    </Border>
 </UserControl>
