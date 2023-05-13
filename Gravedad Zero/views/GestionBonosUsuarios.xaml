@@ -526,12 +526,12 @@
                 <TextBox
                     HorizontalContentAlignment="Center"
                     IsReadOnly="True"
-                    Template="{DynamicResource TextBoxControlTemplate}">gravedadzero@gmail.com</TextBox>
+                    Template="{DynamicResource TextBoxControlTemplate}">marga@gmail.com</TextBox>
                 <Label>Nick</Label>
                 <TextBox
                     HorizontalContentAlignment="Center"
                     IsReadOnly="True"
-                    Template="{DynamicResource TextBoxControlTemplate}">admin</TextBox>
+                    Template="{DynamicResource TextBoxControlTemplate}">marga</TextBox>
                 <Label>Bonos</Label>
                 <StackPanel
                     HorizontalAlignment="Center"
